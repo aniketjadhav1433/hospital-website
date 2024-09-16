@@ -1,6 +1,23 @@
 let menu = document.querySelector(".abs")
 let side = document.querySelector(".side")
 let a = side.querySelectorAll("a")
+let userDate = document.querySelector('.user-date')
+
+let date = new Date()
+
+let tdate = date.getDate()
+let month = date.getMonth() + 1 ;
+let year = date.getFullYear()
+
+let months = month < 10 ? "0" + month : month ;
+let currDate = date < 10 ? "0" + tdate :tdate;
+
+let minValue = year + "-" + months + "-" + currDate;
+console.log('minval',minValue);
+
+userDate.setAttribute("min",minValue)
+
+
 
 a.forEach((items)=>{
 
