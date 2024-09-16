@@ -1,0 +1,660 @@
+ *{ 
+Margin:0;
+Padding:0;
+Box-sizing: border-box;
+}
+
+
+:root{
+    --background-color:linear-gradient(to right, rgb(80, 80, 228) ,aqua);
+    --white-color:white;
+    --black-color:black;
+}
+
+body{
+    background:var(--background-color);
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+nav.scroll{
+    background: var(--white-color);
+    box-shadow: none;
+
+    a{
+        color: gray;
+    }
+}
+
+nav{
+    position: relative;
+    height: 10vh;
+    background:var(--background-color);
+    box-shadow: 2px 2px 5px aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: clamp(1rem, 1.4vw, 4rem);
+    text-transform: capitalize;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.abs{
+    position: absolute;
+    right: 20px;
+    display: none;
+}
+
+
+
+.side{
+    position: absolute;
+    bottom: -200px;
+    right: -150px;
+    width: fit-content;
+    display: none;
+    flex-direction: column;
+    background-color: var(--white-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 30px;
+    gap: 20px;
+
+    a{
+        text-decoration: none;
+        color: var(--black-color);
+        position: relative;
+    }
+}
+
+.side.show{
+    display: flex;
+    animation: showing 0.4s ease forwards;
+}
+
+@keyframes showing {
+    100%{
+        right: 0;
+    }
+}
+
+.side a:hover::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    right: 0;
+    height: 5px;
+    width: 0;
+    opacity: 0;
+    animation: hovering 0.6s ease forwards;
+    background-color: rgb(249, 199, 199);
+}
+
+@keyframes hovering {
+    100%{
+        width: 100%;
+        opacity: 1;
+    }
+}
+.links{
+    display: flex;
+    gap: 40px;
+    a{
+        text-decoration: none;
+        color: var(--black-color);
+        padding: 10px;
+    }
+}
+
+.btn1{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: palevioletred;
+    text-transform: capitalize;
+    border-radius: 10px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* ======================================= home ========================================= */
+
+.home{
+    height: 90vh;
+    width: 100vw;
+    margin-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    text-transform: capitalize;
+    gap: 30px;
+}
+
+
+.home .right img{
+    width: 90%;
+}
+
+h2{
+    font-size: clamp(1rem, 3vw, 4rem);
+}
+
+h3{
+    font-size: clamp(1rem, 2.2vw, 4rem);
+}
+h4{
+    font-size: clamp(1rem, 1.8vw, 4rem);
+}
+
+p{
+    font-size: clamp(1rem, 1.6vw, 4rem);
+}
+
+a{
+    font-size: clamp(1rem, 1.4vw, 4rem);
+
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* ==================================== services =============================== */
+
+
+.services{
+    height: 90vh;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.top{
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.box{
+    display: flex;
+    gap: 20px;
+    background:var(--background-color) ;
+    border-radius: 10px;
+    padding: 30px;
+    color: var(--white-color);
+    margin-top: 70px;
+}
+
+@keyframes anime {
+
+    100%{
+        transform: translateY(10px);
+
+    }
+}
+
+.box:hover{
+    animation: anime 0.3s ease   forwards;
+}
+
+.box i{
+    padding-top: 10px;
+}
+
+.box p{
+        font-size: clamp(1rem, 1.4vw, 4rem);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* ==================================== special =============================== */
+
+
+.special{
+    height: fit-content;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: rgba(177, 245, 245, 0.892);
+    text-transform: capitalize;
+    padding-bottom: 50px;
+}
+
+.spe-head{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+
+.spe-card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-top: 20px;
+    height: fit-content;
+}
+
+.spe-box{
+    text-align: center;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+}
+
+.special-image{
+    position: relative;
+}
+
+.special-image img{
+    width:100%;
+    height: 100%;
+    background-color: rgb(202, 155, 155);
+    border-radius: 20px;
+}
+
+.overlay{
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    height: 0;
+    width: 0;
+    background-color: rgba(165, 250, 248, 0.442);
+    border-radius: 20px;
+    z-index: 99;
+}
+
+@keyframes over {
+    100%{
+        width: 100%;
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+.overlay a{
+    color: var(--black-color);
+}
+
+.special-image:hover{
+    .overlay{
+        animation: over 0.4s ease forwards;
+    }
+}
+
+
+.overlay i{
+    font-size: clamp(1rem,1.6vw, 4rem);
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-right: 20px;
+    padding: 10px;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.whats{
+    width: 100%;
+    padding-top: 30px;
+    position: absolute;
+    top: 60%;
+}
+
+.whats i{
+    background-color: rgb(68, 235, 68);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+
+/* ==================================== test =============================== */
+
+
+.testimonial{
+    height: 70vh;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: var(--white-color);
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.advice{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+.img{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.img img{
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+}
+
+.card2{
+    width: 40%;
+    height: fit-content;
+    color: var(--black-color);
+    border-radius: 20px;
+    padding: 20px;
+    background: var(--background-color);
+    margin-right: 10px;
+}
+
+
+/* ==================================== form =============================== */
+
+.form{
+    display: grid;
+    width: 100vw;
+    padding-inline: 5vw;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    height: 90vh;
+    text-transform: capitalize;
+    background-color: rgba(177, 245, 245, 0.892);
+    padding-top: 20px;
+}
+
+.form-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-left i{
+    background-color: orange;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+select{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    appearance: none;
+    text-transform: capitalize;
+}
+
+option{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.line{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    gap: 20px;
+}
+
+.inline{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.flex input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.butt{
+    margin-top: 10px;
+}
+
+
+
+/* ======================================= footer ========================================= */
+
+
+footer{
+    height: 40vh;
+    background-color:var(--black-color);
+    color: white;
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: repeat(4,1fr);
+    text-transform: capitalize;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 20px;
+    a{
+        color: gray;
+        text-decoration: none;
+    }
+
+    p{
+        color: gray;
+    }
+
+    i{
+        color: gray;
+    }
+
+}
+
+.same{
+    display: flex;
+    gap: 20px;
+}
+
+/* ======================================= media ========================================= */
+
+
+@media (max-width:930px) {
+    
+.cards{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.services{
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.spe-card{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.special{
+    padding-bottom: 20px;
+    height: fit-content;
+}
+
+.special-image{
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    grid-template-columns: repeat(2,1fr);
+    height: fit-content;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.home{
+    grid-template-columns: repeat(1,1fr);
+    text-align: center;
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.home .right img{
+    width: 50%;
+}
+
+.hide{
+    display: none;
+}
+
+.box{
+    margin-top: 20px;
+}
+
+.testimonial{
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.special{
+    height: fit-content;
+}
+
+}
+
+
+@media (max-width:600px) {
+    
+
+    .social{
+        gap: 20px;
+    }
+    
+    .whats{
+        width: 100%;
+        padding-top: 30px;
+        position: absolute;
+        top:50%;
+    }
+.cards{
+    grid-template-columns: repeat(1,1fr);
+}
+
+.box{
+    margin-top: 20px;
+}
+.spe-card{
+    grid-template-columns: repeat(1,1fr);
+}
+
+footer{
+    grid-template-columns: repeat(1,1fr);
+}
+
+.home{
+    grid-template-columns: repeat(1,1fr);
+}
+footer{
+    text-align: center;
+    align-items: center;
+}
+
+.same{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    grid-template-columns: repeat(1,1fr);
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.form-left{
+    text-align: center;
+}
+.line{
+    text-align: start;
+}
+
+.links{
+    display: none;
+}
+
+
+.abs{
+    display: flex;
+}
+
+.spe-box{
+    height: fit-content;
+    padding: 10px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.special{
+    height: fit-content;
+}
+
+}
